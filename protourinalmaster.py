@@ -1,11 +1,12 @@
 import random
+import math
 
 
 def sigmoid(x):
-    return 1 / (1*2.7183**(-x))
+    return 1 / (1 + math.exp(-x))
 
 def asigmoid(x):
-    return x*(1-x)
+    return x * (1-x)
 
 def adjust(ninput, output, aoutput):
     return (output-aoutput)*ninput*asigmoid(output)
